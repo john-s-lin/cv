@@ -1,0 +1,434 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{helvet}
+\usepackage{enumitem}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage[colorlinks=true, urlcolor=primaryColor]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{fontawesome5}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+% New command for multiple degrees from same institution
+\newcommand{\resumeSubheadingMultiDegree}[6]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \small #4 \\
+      \textit{\small#5} & \small #6 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \small #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[4]{ % #3 is the GitHub link
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small\textbf{#1} & #2 \\
+    \small\href{#3}{{\footnotesize\faGithub} \underline{Source}} $|$ #4 & \\ % #4 is the tech stack
+    \end{tabular*}\vspace{-7pt}
+}
+
+% New href command with external link
+\newcommand{\hreffancy}[2]{\href{#1}{#2\raisebox{.15ex}{ }{\footnotesize \faExternalLink*}}}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% Publication counters
+\newcounter{journalCounter}
+\newcounter{conferenceCounter}
+\newcounter{submissionCounter}
+\newcounter{thesisCounter}
+
+\newcommand{\resetRefCounters}{%
+    \setcounter{journalCounter}{0}%
+    \setcounter{conferenceCounter}{0}%
+    \setcounter{submissionCounter}{0}%
+    \setcounter{thesisCounter}{0}%
+}
+
+% Define reference commands
+\newcommand{\jref}{%
+    \stepcounter{journalCounter}%
+    \textbf{[J.\thejournalCounter]}%
+}
+
+\newcommand{\cref}{%
+    \stepcounter{conferenceCounter}%
+    \textbf{[C.\theconferenceCounter]}%
+}
+
+\newcommand{\sref}{%
+    \stepcounter{submissionCounter}%
+    \textbf{[S.\thesubmissionCounter]}%
+}
+
+\newcommand{\tref}{%
+    \stepcounter{thesisCounter}%
+    \textbf{[T.\thethesisCounter]}%
+}
+
+\setlength{\footskip}{4.08003pt}
+
+
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge John Lin} \\ \vspace{0.2em}
+    {\footnotesize\faPhone*} \small 514-827-1635 $|$
+    {\footnotesize\faEnvelope[regular]} \href{mailto:johnlin@cs.toronto.edu}{johnlin@cs.toronto.edu} $|$
+    {\footnotesize\faGlobe} \href{https://johnlin.ca/}{johnlin.ca} $|$
+    {\footnotesize\faLinkedinIn} \href{https://www.linkedin.com/in/john-s-lin/}{john-s-lin} $|$
+    {\footnotesize\faGithub} \href{https://github.com/john-s-lin}{john-s-lin}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Toronto}{}
+      {Master of Science in Applied Computing, Artificial Intelligence in Healthcare}{Sep. 2024 -- June 2026}
+    \resumeSubheading
+      {Concordia University}{}
+      {Bachelor of Computer Science}{Sep. 2020 -- May 2023}
+    \resumeSubheadingMultiDegree
+      {McGill University}{}
+      {Master of Science, Experimental Medicine}{Sep. 2016 -- May 2019}
+      {Bachelor of Science, Physiology}{Sep. 2012 -- June 2016}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Teaching Assistant, Intro to Software Engineering CSC301}{Sep. 2024 -- Present}
+      {University of Toronto}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Mentored four undergraduate teams developing various full-stack and mobile projects}
+        \resumeItem{Delivered tutorial sessions on project deliverables, automating CI/CD pipelines and testing infrastructure}
+      \resumeItemListEnd
+      
+% -----------Multiple Positions Heading-----------
+%    \resumeSubSubheading
+%     {Software Engineer I}{Oct 2014 - Sep 2016}
+%     \resumeItemListStart
+%        \resumeItem{Apache Beam}
+%          {Apache Beam is a unified model for defining both batch and streaming data-parallel processing pipelines}
+%     \resumeItemListEnd
+%    \resumeSubHeadingListEnd
+%-------------------------------------------
+
+    \resumeSubheading
+      {Founding Software Engineer, Machine Learning Infrastructure}{July 2023 -- Aug. 2024}
+      {lifes.ai}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Developed the architecture for an automated statistical analysis and machine learning tool to streamline data analysis for the life sciences}
+        \resumeItem{Developed the architecture for a synthetic data generator to create test fixtures for ML model validation}
+        \resumeItem{Piloted cross-OS development through containerized development environments for developer consistency}
+    \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Developer Intern, Platform and Shared Services}{May 2022 -- Jan. 2023}
+      {SSENSE}{Montreal, QC}
+      \resumeItemListStart
+        \resumeItem{Implemented and deployed an automated PubSub subscription manager for message queues, reducing multiple bottlenecks and manual configuration to a single step, saving 50+ developer-hours/month}
+        \resumeItem{Designed and deployed a Jenkins pipeline for API Gateway logging configuration in 8 different business domains, reducing manual configuration and errors while ensuring reproducibility}
+        \resumeItem{Contributed dashboard and CI/CD plugins for an MVP developer portal that serves as a single source of truth for multiple development teams, bringing APIs, analytics and monitoring under a single roof}
+        \resumeItem{Collaborated closely with DevOps and SREs for automating E2E testing and infrastructure benchmark monitoring}
+        \resumeItem{SME for GitHub dependabot, automating dependency updates for 10+ repositories}
+      \resumeItemListEnd
+    
+    \resumeSubheading
+      {Research Assistant, HIV and Gastrointestinal Immunity}{Jan. 2019 -- Nov. 2021}
+      {Research Institute of the McGill University Health Centre}{Montreal, QC}
+      \resumeItemListStart
+        \resumeItem{Supervisor: Dr. Jean-Pierre Routy, MD, FRCPC}
+        \resumeItem{Determined statistical correlations between biological markers and health outcomes through wet lab and clinical studies in people living with chronic infectious diseases such as HIV and cytomegalovirus (CMV)}
+        \resumeItem{Co-authored over 25 scientific publications, including 4 articles as first author}
+        \resumeItem{Secured grants over \$1M to further lab research in GI health in people living with HIV}
+      \resumeItemListEnd
+      
+  \resumeSubHeadingListEnd
+
+%-----------PUBLICATIONS-----------
+\section[selected-publications]{Selected Publications \normalfont[\hreffancy{https://www.ncbi.nlm.nih.gov/myncbi/1bsLyXj4wN1khf/bibliography/public/}{Full List}] \hfill {\scriptsize C=Conference, J=Journal, T=Thesis} }
+
+\small{
+\begin{enumerate}[leftmargin=*, labelsep=0.5em, align=left, widest={[\textbf{S.1}]}, itemindent=0em, label={\textbf{[\arabic*]}]}]
+
+\item[\jref] Isnard S, Royston L, Scott SC, Mabanga T, \textbf{Lin J}, Fombuena B, Bu S, Berini CA, Goldberg MS, Finkelman M, Brouillette MJ, Fellows LK, Mayo NE, Routy JP (2023). \href{https://pubmed.ncbi.nlm.nih.gov/37202809/}{\textbf{Translocation of bacterial LPS is associated with self-reported cognitive abilities in men living with HIV receiving antiretroviral therapy}}. \textit{AIDS Res Ther}, Vol. 20, pp. 30. DOI: 10.1186/s12981-023-00525-z
+
+\item[\jref] Royston L, Isnard S, Perrin N, Sinyavskaya L, Berini C, \textbf{Lin J}, Trottier B, Baril JG, Chartrand-Lefebvre C, Tremblay C, Durand M, Routy JP (2022). \href{https://pubmed.ncbi.nlm.nih.gov/36093162/}{\textbf{Growth differentiation factor-15 as a biomarker of atherosclerotic coronary plaque: Value in people living with and without HIV}}. \textit{ Front Cardiovasc Med}, Vol. 9. DOI: 10.3389/fcvm.2022.964650
+
+\item[\jref] Isnard S, Royston L, \textbf{Lin J}, Fombuena B, Bu S, Kant S, Mabanga T, Berini C, El-Far M, Durand M, Tremblay CL, Bernard NF, Kroemer G, Routy JP (2022). \href{https://www.ncbi.nlm.nih.gov/pubmed/35336860/}{\textbf{Distinct Plasma Concentrations of Acyl-CoA-Binding Protein (ACBP) in HIV Progressors and Elite Controllers}}. \textit{Viruses}, Vol. 14, Issue 3, pp. 453. DOI: 10.3390/v14030453
+
+\item[\jref] Ahmed DS, Isnard S, Berini C, \textbf{Lin J}, Routy JP, Royston L (2022). \href{https://doi.org/10.3389/fimmu.2022.820350}{\textbf{Coping With Stress: The Mitokine GDF-15 as a Biomarker of COVID-19 Severity}}. \textit{Frontiers in Immunology}, Vol. 13, pp. 820350. DOI: 10.3389/fimmu.2022.820350
+
+\item[\jref] Ellis RJ, Iudicello JE, Heaton RK, Isnard S, \textbf{Lin J}, Routy JP, Gianella S, Hoenigl M, Knight R. (2021). \href{https://doi.org/10.3390/v13101891}{\textbf{Markers of Gut Barrier Function and Microbial Translocation Associate with Lower Gut Microbial Diversity in People with HIV}}. \textit{Viruses}, Vol. 13, Issue 10, pp. 1891. DOI: 10.3390/v13101891
+
+\item[\jref] Isnard S, Fombuena B, Ouyang J, Royston L, \textbf{Lin J}, Bu S, Sheehan N, Lakatos PL, Bessissow T, Chomont N, Klein M, Lebouché B, Costiniuk CT, Routy B, Marette A, Routy JP (2022). \href{https://doi.org/10.1136/bmjopen-2021-053081}{\textbf{Camu Camu effects on microbial translocation and systemic immune activation in ART-treated people living with HIV: Protocol of the single-arm non-randomised Camu Camu prebiotic pilot study}}. \textit{BMJ Open}, Vol. 12, Issue 1, pp. e053081. DOI: 10.1136/bmjopen-2021-053081
+
+\item[\jref] Isnard S, Royston L, \textbf{Lin J}, Fombuena B, Bu S, Kant S, Mabanga T, Berini C, El-Far M, Durand M, Tremblay CL, Bernard NF, Kroemer G, Routy JP (2022). \href{https://doi.org/10.3390/v14030453}{\textbf{Distinct Plasma Concentrations of Acyl-CoA-Binding Protein (ACBP) in HIV Progressors and Elite Controllers}}. \textit{Viruses}, Vol. 14, Issue 3, pp. 453. DOI: 10.3390/v14030453
+
+\item[\jref] Ramendra R, Mancini M, Ayala JM, Tung LT, Isnard S, \textbf{Lin J}, Routy JP, Nijnik A, Langlais D (2021). \href{https://doi.org/10.3389/fimmu.2021.694152}{\textbf{Glutathione Metabolism Is a Regulator of the Acute Inflammatory Response of Monocytes to (1$\rightarrow$3)-$\beta$-D-Glucan}}. \textit{Frontiers in Immunology}, 12:694152. DOI: 10.3389/fimmu.2021.694152.
+
+\item[\jref] Routy JP, Dupuy FP, \textbf{Lin J}, Isnard S (2022). \href{https://doi.org/10.1007/978-1-0716-1871-4_13}{\textbf{More than a Gender Issue: Testis as a Distinctive HIV Reservoir and Its Implication for Viral Eradication}}. In G Poli, E Vicenzi, F Romerio (Eds.), \textit{HIV Reservoirs: Methods and Protocols} (pp. 173–186). Springer US. DOI: 10.1007/978-1-0716-1871-4\_13.
+
+\item[\jref] Wiseman D, \textbf{Lin J}, Routy JP, Samoukovic G (2021). \href{https://doi.org/10.1136/bcr-2021-245031}{\textbf{Haemophagocytic lymphohistiocytosis in an adult with postacute COVID-19 syndrome}}. \textit{BMJ Case Reports}, 14(9):e245031. DOI: 10.1136/bcr-2021-245031.
+
+\item[\jref] Bedier H, \textbf{Lin J}, Frenette C, Routy JP (2021). \href{https://doi.org/10.1016/j.idcr.2021.e01263}{\textbf{Cerebral aspergillosis and facial acneiform lesions following initiation of ibrutinib in a patient with chronic lymphocytic leukemia}}. \textit{IDCases}, 26:e01263. DOI: 10.1016/j.idcr.2021.e01263.
+
+\item[\jref] Isnard S*, Fombuena B*, Sadouni M, \textbf{Lin J}, Richard C, Routy B, Ouyang J, Ramendra R, Peng X, Zhang Y, Finkelman M, Tremblay-Sher D, Tremblay C, Chartrand-Lefebvre C, Durand M, Routy JP (2021). \href{https://doi.org/10.1093/ofid/ofab109}{\textbf{Circulating $\beta$-d-Glucan as a Marker of Subclinical Coronary Plaque in Antiretroviral Therapy-Treated People With Human Immunodeficiency Virus}}. \textit{Open Forum Infectious Diseases}, 8(6):ofab109. DOI: 10.1093/ofid/ofab109.
+
+\item[\jref] Royston L, Isnard S, \textbf{Lin J}, Routy JP (2021). \href{https://doi.org/10.3390/v13071266}{\textbf{Cytomegalovirus as an Uninvited Guest in the Response to Vaccines in People Living with HIV}}. \textit{Viruses}, 13(7):1266. DOI: 10.3390/v13071266.
+
+\item[\jref] Isnard S, \textbf{Lin J}, Bu S, Fombuena B, Royston L, Routy JP (2021). \href{https://doi.org/10.3389/fimmu.2021.656414}{\textbf{Gut Leakage of Fungal‐Related Products: Turning Up the Heat for HIV Infection}}. \textit{Frontiers in Immunology}, 12:656414. DOI: 10.3389/fimmu.2021.656414.
+
+\item[\jref] Peng X, Isnard S, \textbf{Lin J}, Fombuena B, Bessissow T, Chomont N, Routy JP (2021). \href{https://doi.org/10.1016/j.jve.2021.100033}{\textbf{Differences in HIV burden in the inflamed and non-inflamed colon from a person living with HIV and ulcerative colitis}}. \textit{Journal of Virus Eradication}, 100033. DOI: 10.1016/j.jve.2021.100033.
+
+\item[\jref] Bedier H, \textbf{Lin J}, Julien LA, Routy JP (2021). \href{https://doi.org/10.1136/bcr-2020-238644}{\textbf{Concurrent development of HIV-negative Kaposi’s sarcoma and mycosis fungoides in an elderly Inuit from Canada}}. \textit{BMJ Case Reports}, 14(1):e238644. DOI: 10.1136/bcr-2020-238644.
+
+\item[\jref] Kwok M, \textbf{Lin J}, Routy JP (2021). \href{https://doi.org/10.1136/bcr-2020-235981}{\textbf{Concurrent BK polyomavirus, adenovirus and cytomegalovirus infections in a patient treated for chronic lymphocytic leukaemia}}. \textit{BMJ Case Reports}, 14(1):e235981. DOI: 10.1136/bcr-2020-235981.
+
+\item[\jref] Ahmed DS, Isnard S, \textbf{Lin J}, Routy B, Routy JP (2021). \href{https://doi.org/10.7150/jca.50376}{\textbf{GDF15/GFRAL Pathway as a Metabolic Signature for Cachexia in Patients with Cancer}}. \textit{Journal of Cancer}, 12(4):1125–1132. DOI: 10.7150/jca.50376.
+
+\item[\jref] Peng X, Ouyang J, Isnard S, \textbf{Lin J}, Fombuena B, Zhu B, Routy JP (2020). \href{https://doi.org/10.3389/fimmu.2020.596631}{\textbf{Sharing CD4+ T Cell Loss: When COVID-19 and HIV Collide on Immune System}}. \textit{Frontiers in Immunology}, 11:3307. DOI: 10.3389/fimmu.2020.596631.
+
+\item[\jref] Ouyang J, Isnard S, \textbf{Lin J}, Fombuena B, Peng X, Chen Y, Routy JP (2020). \href{https://doi.org/10.3389/fendo.2020.581839}{\textbf{GDF-15 as a Weight Watcher for Diabetic and Non-Diabetic People Treated With Metformin}}. \textit{Frontiers in Endocrinology}, 11:581839. DOI: 10.3389/fendo.2020.581839.
+
+\item[\jref] Ouyang J*, Isnard S*, \textbf{Lin J}*, Fombuena B, Peng X, Routy JP, Chen Y (2020). \href{https://doi.org/10.3389/fimmu.2020.570063}{\textbf{Convalescent Plasma: The Relay Baton in the Race for Coronavirus Disease 2019 Treatment}}. \textit{Frontiers in Immunology}, 11:570063. DOI: 10.3389/fimmu.2020.570063.
+
+\item[\jref] Hoenigl M*, \textbf{Lin J}*, Finkelman M, Zhang Y, Karris MY, Letendre S, Ellis RJ, Burke L, Richard B, Gaufin T, Isnard S, Routy JP, Gianella S (2020). \href{https://doi.org/10.1111/myc.13161}{\textbf{Glucan rich nutrition does not increase gut translocation of Beta glucan}}. \textit{Mycoses}, n/a(n/a). DOI: 10.1111/myc.13161.
+
+\item[\jref] Isnard S, \textbf{Lin J}, Fombuena B, Ouyang J, Varin TV, Richard C, Marette A, Ramendra R, Planas D, Raymond-Marchand L, Messaoudene M, Van der Ley CP, Kema I, Sohail Ahmed D, Zhang Y, Finkelman M, Routy B, Angel J, Ancuta P, Routy JP (2020). \href{https://doi.org/10.1093/ofid/ofaa338}{\textbf{Repurposing metformin in non-diabetic people living with HIV: Influence on weight and gut microbiota}}. \textit{Open Forum Infectious Diseases}, ofaa338. DOI: 10.1093/ofid/ofaa338.
+
+\item[\jref] Isnard S, Ramendra R, \textbf{Lin J}, Kant S, Fombuena B, Ouyang J, Peng X, El Far M, Tremblay C, Bernard NF, Routy JP (2020). \href{https://doi.org/10.1093/cid/ciaa1129}{\textbf{Anti-CMV IgG is linked to CD4 T-cell count decay in HIV elite controllers}}. \textit{Clinical Infectious Diseases}, ciaa1129. DOI: 10.1093/cid/ciaa1129.
+
+\item[\jref] Ouyang J, Isnard S, \textbf{Lin J}, Fombuena B, Peng X, Nair Parvathy S, Chen Y, Silverman MS, Routy JP (2020). \href{https://doi.org/10.3389/fmed.2020.00421}{\textbf{Treating From the Inside Out: Relevance of Fecal Microbiota Transplantation to Counteract Gut Damage in GVHD and HIV Infection}}. \textit{Frontiers in Medicine}, 7:421. DOI: 10.3389/fmed.2020.00421.
+
+\item[\jref] Ouyang J, Isnard S, \textbf{Lin J}, Fombuena B, Chatterjee D, Wiche Salinas TR, Planas D, Cattin A, Fert A, Moreira Gabriel E, Raymond Marchand L, Zhang Y, Finkelman M, Chen Y, Kaufmann DE, Cermakian N, Ancuta P, Routy JP (2020). \href{https://doi.org/10.1186/s12981-020-00273-4}{\textbf{Daily variations of gut microbial translocation markers in ART-treated HIV-infected people}}. \textit{AIDS Research and Therapy}, 17(1):15. DOI: 10.1186/s12981-020-00273-4.
+
+\item[\jref] Ouyang J*, \textbf{Lin J}*, Isnard S, Fombuena B, Peng X, Marette A, Routy B, Messaoudene M, Chen Y, Routy JP (2020). \href{https://doi.org/10.3389/fimmu.2020.00645}{\textbf{The Bacterium Akkermansia muciniphila: A Sentinel for Gut Permeability and Its Relevance to HIV-Related Inflammation}}. \textit{Frontiers in Immunology}, 11:645. DOI: 10.3389/fimmu.2020.00645.
+
+\item[\jref] \textbf{Lin J}*, Ouyang J*, Peng XR, Isnard S, Fombuena B, Routy JP, Chen YK (2020). \href{https://doi.org/10.1097/CM9.0000000000000816}{\textbf{Potential therapeutic options for coronavirus disease 2019: Using knowledge of past outbreaks to guide future treatment}}. \textit{Chinese Medical Journal}, 1. DOI: 10.1097/CM9.0000000000000816.
+
+\item[\jref] Ouyang J, Isnard S, \textbf{Lin J}, Fombuena B, Marette A, Routy B, Chen Y, Routy JP (2020). \href{https://doi.org/10.1186/s12981-020-00267-2}{\textbf{Metformin effect on gut microbiota: Insights for HIV-related inflammation}}. \textit{AIDS Research and Therapy}, 17(1):10. DOI: 10.1186/s12981-020-00267-2.
+
+\item[\jref] Zhang Y, Chen S, \textbf{Lin J}, Wang Y, Gui XE, Ke H, Deng D, Routy JP, Cao Q (2019). \href{https://doi.org/10.1080/10428194.2019.1697877}{\textbf{The option of treatment and outcomes for patients with AIDS-related diffuse large B-cell lymphoma from a resource-limited setting in China}}. \textit{Leukemia Lymphoma}, 1–4. DOI: 10.1080/10428194.2019.1697877.
+
+\item[\jref] Ramendra R, Isnard S, \textbf{Lin J}, Fombuena B, Ouyang J, Mehraj V, Zhang Y, Finkelman M, Costiniuk C, Lebouché B, Chartrand-Lefebvre C, Durand M, Tremblay C, Ancuta P, Boivin G, Routy JP (2019). \href{https://doi.org/10.1093/cid/ciz1001}{\textbf{CMV seropositivity is associated with increased microbial translocation in people living with HIV and uninfected controls}}. \textit{Clinical Infectious Diseases}. DOI: 10.1093/cid/ciz1001.
+
+\item[\jref] Isnard S, Ramendra R, Dupuy FP, \textbf{Lin J}, Fombuena B, Kokinov N, Kema I, Jenabian MA, Lebouche B, Costiniuk CT, Ancuta P, Bernard NF, Silverman MS, Lakatos PL, Durand M, Tremblay C, Routy JP (2019). \href{https://doi.org/10.1093/infdis/jiz423}{\textbf{Plasma levels of C-type lectin REG3alpha and gut damage in people with HIV}}. \textit{Journal of Infectious Diseases}. DOI: 10.1093/infdis/jiz423.
+
+% Oral presentations
+\item[\cref] \textbf{Lin J}, Isnard S, Ramendra R, et al. (2020). \href{https://www.cahr-acrv.ca/conference/}{\textbf{Plasma CXCL13 Correlates with Reservoir Size in Long-term ART-treated People Living With HIV}}. In \textit{Canadian Association for HIV Research}. Quebec City, QC, CA. May 1, 2020.
+
+% Thesis
+\item[\tref] \textbf{Lin J}, Rousseau S (2019). \href{https://escholarship.mcgill.ca/concern/theses/j67316218}{\textbf{Role of IL-6 trans-signalling in pulmonary exacerbations in cystic fibrosis}}. Thesis. McGill University.
+
+\end{enumerate}
+}
+
+%-----------PROJECTS-----------
+\section{Selected Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {Hybrid Emergency Room Triage Scheduler}
+          {Mar. 2024 -- Present}
+          {https://github.com/john-s-lin/desert} % GitHub link
+          {Rust, Python, Docker, GitHub Actions} % Tech stack
+          \resumeItemListStart
+            \resumeItem{Implementing a simulator for a hybrid triaging engine that accounts for wait-time and time-to-treat as metrics to improve hospital emergency department wait times.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {Automated NLP on Targeted Subdomains}
+          {Sep. 2023 -- Oct. 2023}
+          {https://github.com/john-s-lin/nonsense-sentiment-scraper} % GitHub link
+          {Python, Docker, Scrapy, Scikit-Learn, AFINN, GitHub Actions} % Tech stack
+          \resumeItemListStart
+            \resumeItem{Automated web scraping on a targeted subdomain, extracting text tokens using ETL techniques for K-means clustering and sentiment analysis.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {MNIST-ML}
+          {May 2023 -- Jul. 2023}
+          {https://github.com/john-s-lin/mnist-ml} % GitHub link
+          {C++, Make} % Tech stack
+          \resumeItemListStart
+            \resumeItem{Implemented data ingestion and naïve supervised and unsupervised machine learning (ML) algorithms (K-means, K-nearest neighbours, neural network) from scratch.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {Predicting COVID-19 Waves}
+          {Dec. 2021 -- May 2023}
+          {https://github.com/john-s-lin/can-covid-wave} % GitHub link
+          {Python, Pandas, NumPy, Matplotlib, Seaborn, Facebook Prophet, Jupyter} % Tech stack
+          \resumeItemListStart
+            \resumeItem{Used ETL techniques, ML and synthetic data along with Facebook Prophet to predict future waves of COVID-19 in Canada using data provided by Health Canada.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {Ticket Price Bot}
+          {Apr. 2023 -- May 2023}
+          {https://github.com/john-s-lin/ticket-price-bot} % GitHub link
+          {Python, BeautifulSoup4, GitHub Actions} % Tech stack
+          \resumeItemListStart
+            \resumeItem{Created a web scraper/data miner that collects ticket pricing data, then parses it into a webhook payload using REST APIs. Runs on a CI/CD pipeline using GitHub Actions.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {Hit Song Classifier}
+          {Feb. 2023 -- Apr. 2023}
+          {https://github.com/john-s-lin/hit-song-classifier} % GitHub link
+          {Python, Apache Spark, Dask, Jupyter, GitHub Actions, Spotify Web API} % Tech stack
+          \resumeItemListStart
+            \resumeItem{Generated a big data ML song classifier using song features from the Spotify API as well as Billboard Hot 100 rankings from the past 50 years, using ETL and ML in Apache Spark.}
+            \resumeItem{Configured dev environment, directory structure, and enforced style through automated CI/CD.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {Reddit Stock Picker}
+          {Nov. 2021 -- Dec. 2021}
+          {https://github.com/john-s-lin/reddit-stock-picker} % GitHub link
+          {Python, Scikit-learn, NumPy, Matplotlib, Seaborn, Jupyter} % Tech stack
+          \resumeItemListStart
+            \resumeItem{Collaborated in a team of four to perform sentimental analysis on Reddit posts in popular financial/investing subreddits to determine best-performing stocks.}
+            \resumeItem{Used natural language processing (NLP) and sentimental analysis to determine text sentiment as a predictive feature for stock performance.}
+            \resumeItem{Generated performance metrics on different classification ML models including decision trees, random forest classifiers, support vector machines, and logistic regressors.}
+          \resumeItemListEnd
+
+      \resumeProjectHeading
+          {Online Grocery Store}
+          {Jun. 2021 -- Aug. 2021}
+          {https://github.com/john-s-lin/MooMoo-Grocery-2} % GitHub link
+          {HTML, CSS, JavaScript (JS), Bootstrap, PHP, XML} % Tech stack
+          \resumeItemListStart
+            \resumeItem{Collaborated in a team of five to create an online grocery store for a course project.}
+            \resumeItem{Contributed to full-stack development including front-end using Bootstrap and JS, and vanilla PHP and XML for backend.}
+            \resumeItem{Taught team members how to use Git and GitHub for version control using the Gitflow framework.}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, C/C++, Java, Rust, JavaScript, TypeScript, SQL (MySQL, SQLite), R} \\
+     \textbf{Developer Tools}{: Git, GitHub, Jenkins, AWS, Docker, Kubernetes, CI/CD, VSCode, Neovim} \\
+     \textbf{Libraries \& Frameworks}{: Apache Spark, Hadoop, PyTorch, pandas, NumPy, Matplotlib} \\
+     \textbf{Domains}{: Artificial Intelligence (AI), Machine Learning (ML), Deep Learning, Natural Language Processing (NLP), Data Science, Data Engineering, DevOps, Software Engineering, Full-Stack Web Development, Big Data}
+    }}
+ \end{itemize}
+
+% Extracurriculars
+% TODO
+% \section{Extracurriculars}
+%     \resumeSubHeadingListStart
+%         \resumeSubheading
+%         {Grace Fellowship Church of East Toronto}{}
+%         {Projection}{May 2024 -- present}
+%         \resumeItemListStart
+%             \resumeItem{Preparation for projection of sermon slides and worship songs}
+%             \resumeItem{Setup visual equipment for pre-service}
+%         \resumeItemListEnd
+
+%         \resumeSubheading
+%         {Montreal Chinese Baptist Church}{}
+%         {Worship Team, Pianist}{Jan. 2015 -- May 2023}
+%         \resumeSubSubheading{English Ministry Committee - Secretary, Worship Portfolio}{Jan. 2018 -- Dec. 2019}
+%         \resumeSubSubheading{Short-term Missionary to Chilibre, Panama}{Jan. 2017 -- Jun. 2017}
+        
+%     \resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}
