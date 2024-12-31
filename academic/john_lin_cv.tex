@@ -68,8 +68,21 @@
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \small #4 \\
+      \small{#3} & \small{#4} \\
     \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubheadingCourseWork}[5]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small{#3} & \small{#4} \\
+    \end{tabular*}
+    \vspace{-7pt}
+    \begin{itemize}[leftmargin=0.15in]
+        \item \textit{\small Relevant Coursework}: {\small #5} 
+    \end{itemize}
+    \vspace{-1em}
 }
 
 % New command for multiple degrees from same institution
@@ -77,8 +90,8 @@
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \small #4 \\
-      \textit{\small#5} & \small #6 \\
+      {\small#3} & \small #4 \\
+      {\small#5} & \small #6 \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -170,12 +183,14 @@
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
-    \resumeSubheading
+    \resumeSubheadingCourseWork
       {University of Toronto}{}
       {Master of Science in Applied Computing, Artificial Intelligence in Healthcare}{Sep. 2024 -- June 2026}
-    \resumeSubheading
+      {Computational Imaging, Spatial Data Analysis, Cloud-Native Data Systems, Human Factors and System Design}
+    \resumeSubheadingCourseWork
       {Concordia University}{}
       {Bachelor of Computer Science}{Sep. 2020 -- May 2023}
+      {Data Structures and Algorithms, Data Analytics, Big Data, Machine Learning (ML), Artificial Intelligence, Databases (MySQL), Web Development, Information Retrieval and Web Search, Natural Language Processing}
     \resumeSubheadingMultiDegree
       {McGill University}{}
       {Master of Science, Experimental Medicine}{Sep. 2016 -- May 2019}
