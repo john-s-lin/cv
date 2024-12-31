@@ -79,7 +79,7 @@
       \small{#3} & \small{#4} \\
     \end{tabular*}
     \vspace{-7pt}
-    \begin{itemize}[leftmargin=0.15in]
+    \begin{itemize}
         \item \textit{\small Relevant Coursework}: {\small #5} 
     \end{itemize}
     \vspace{-1em}
@@ -156,7 +156,7 @@
     \textbf{[T.\thethesisCounter]}%
 }
 
-\setlength{\footskip}{4.08003pt}
+\setlength{\footskip}{13.6pt}
 
 
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -186,7 +186,7 @@
     \resumeSubheadingCourseWork
       {University of Toronto}{}
       {Master of Science in Applied Computing, Artificial Intelligence in Healthcare}{Sep. 2024 -- June 2026}
-      {Computational Imaging, Spatial Data Analysis, Cloud-Native Data Systems, Human Factors and System Design}
+      {Computational Imaging, Spatial Data Analysis, Cloud-Native Data Systems, Human Factors and System Design in Healthcare}
     \resumeSubheadingCourseWork
       {Concordia University}{}
       {Bachelor of Computer Science}{Sep. 2020 -- May 2023}
@@ -334,13 +334,31 @@
 %-----------PROJECTS-----------
 \section{Selected Projects}
     \resumeSubHeadingListStart
-      \resumeProjectHeading
+        \resumeProjectHeading
           {Hybrid Emergency Room Triage Scheduler}
           {Mar. 2024 -- Present}
           {https://github.com/john-s-lin/desert} % GitHub link
           {Rust, Python, Docker, GitHub Actions} % Tech stack
           \resumeItemListStart
             \resumeItem{Implementing a simulator for a hybrid triaging engine that accounts for wait-time and time-to-treat as metrics to improve hospital emergency department wait times.}
+          \resumeItemListEnd
+
+        \resumeProjectHeading
+          {Vax Populi: Analyzing COVID-19 Outcomes in the Context of Political Alignment}
+          {Nov. 2024 -- Dec. 2024}
+          {https://github.com/john-s-lin/vax-populi} % GitHub link
+          {R, renv} % Tech stack
+          \resumeItemListStart
+            \resumeItem{Performed an analysis on COVID-19 case rates, vaccination rates and death rates in correlation with electoral data from NYC. Showed that conservative voters were correlated with higher case rates and death rates, while no such correlation existed for vaccination rates.}
+          \resumeItemListEnd
+          
+        \resumeProjectHeading
+          {Optimizing Priors for Denoising Low-Dose Computed Tomography}
+          {Oct. 2024 -- Dec. 2024}
+          {https://github.com/john-s-lin/mambagym} % GitHub link
+          {Python, PyTorch, Bash, Slurm, GitHub Actions} % Tech stack
+          \resumeItemListStart
+            \resumeItem{Benchmarked state-of-the-art denoisers using state-space models against convolutional neural networks on low-dose computed tomography (CT) scans. Showed a 10-15\% denoising improvment using ADMM vs. RED-CNN.}
           \resumeItemListEnd
 
       \resumeProjectHeading
