@@ -1,7 +1,7 @@
 # John Lin
 
 ```
-Updated: 2024-01-27
+Updated: 2024-12-31
 ```
 
 A collection of my academic CV and single-page resume.
